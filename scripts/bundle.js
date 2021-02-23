@@ -34,12 +34,12 @@ async function bundle({ bundled, minified, options = {} }) {
       webkit: false,
     },
     sourceMap: {
-      url: `${ minified }.js.map`,
+      url: `${ minified }.js.map,
     },
   });
 
   await writeFile(`${ PATH }${ minified }.js`, code);
-  await writeFile(`${ PATH }${ minified }.js.map`, map);
+  await writeFile(`${ PATH }${ minified }.js.map`);
   log('minification', minified, code);
 }
 
